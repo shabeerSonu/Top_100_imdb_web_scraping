@@ -11,7 +11,6 @@ response = requests.get(url)
 if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
     anime_data = soup.select(".lister-item-header")
-    rating_data = soup.select(".ipl-rating-star")
     anime_list = [anime.getText() for anime in anime_data]
 
     # change the name '100_Anime_List.csv' to whatever you want
